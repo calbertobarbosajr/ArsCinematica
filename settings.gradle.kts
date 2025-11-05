@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ArsCinematica"
+rootProject.name = "Ars Cinematica"
 include(":app")

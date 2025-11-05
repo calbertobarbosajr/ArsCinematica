@@ -4,44 +4,37 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.calberto_barbosa_jr.arscinematica.ui.theme.ArsCinematicaTheme
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import com.calberto_barbosa_jr.arscinematica.ui.details.MovieDetailsScreen
+import com.calberto_barbosa_jr.arscinematica.ui.favorites.FavoritesScreen
+import com.calberto_barbosa_jr.arscinematica.ui.movies.MovieListScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        val apiKey = BuildConfig.TMDB_API_KEY
+
         setContent {
+            val navController = rememberNavController()
             ArsCinematicaTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                NavHost(navController = navController, startDestination = "list") {
+                    composable("list") {
+                        MovieListScreen(navController)
+                    }
+                    composable("details/{movieId}") { backStackEntry ->
+                        val movieId = backStackEntry.arguments?.getString("movieId")?.toIntOrNull() ?: 0
+                        MovieDetailsScreen(movieId, apiKey)
+                    }
+                    composable("favorites") {
+                        FavoritesScreen(navToDetails = { id -> navController.navigate("details/$id") })
+                    }
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ArsCinematicaTheme {
-        Greeting("Android")
     }
 }

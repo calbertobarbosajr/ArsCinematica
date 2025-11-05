@@ -135,17 +135,17 @@ com.seuprojeto
 │
 ├── MainActivity.kt
 └── App.kt
-
-##
+```
 
 ## 🔑 Configuração da API Key
 
 No arquivo `local.properties`, adicione:
 
----
+###
 
 ```properties
 TMDB_API_KEY=sua_chave_aqui
+```
 
 ###
 

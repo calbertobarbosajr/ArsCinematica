@@ -176,7 +176,7 @@ buildFeatures {
 
 📦 Dependências Principais
 
-###
+```
 
 // Retrofit
 implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -209,8 +209,7 @@ implementation("androidx.paging:paging-compose:3.3.0")
 // Koin
 implementation("io.insert-koin:koin-android:3.5.0")
 implementation("io.insert-koin:koin-androidx-compose:3.5.0")
-
-###
+```
 
 🧰 Ambiente de Desenvolvimento
 

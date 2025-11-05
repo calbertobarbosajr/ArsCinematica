@@ -218,6 +218,3 @@ Arquitetura: MVVM + Repository Pattern
 📝 Licença
 
 Distribuído sob a licença MIT. Consulte o arquivo LICENSE para mais informações.
-
-
-

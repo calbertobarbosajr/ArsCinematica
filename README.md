@@ -150,7 +150,7 @@ TMDB_API_KEY=sua_chave_aqui
 Obtenha uma chave gratuita em:
 https://developer.themoviedb.org
 
-No arquivo build.gradle.kts (Módulo):
+No arquivo `build.gradle.kts (Módulo)`:
 
 ```
 import java.util.Properties
@@ -209,9 +209,9 @@ implementation("io.insert-koin:koin-androidx-compose:3.5.0")
 ## 🧰 Ambiente de Desenvolvimento
 
 Android Studio: Narwhal 4 Feature Drop (2025.1.4)
-Compile SDK: 35
-Linguagem: Kotlin
-Arquitetura: MVVM + Repository Pattern
+- Compile SDK: 35
+- Linguagem: Kotlin
+- Arquitetura: MVVM + Repository Pattern
 
 ## 📝 Licença
 

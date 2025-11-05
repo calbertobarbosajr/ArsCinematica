@@ -136,27 +136,25 @@ com.seuprojeto
 ├── MainActivity.kt
 └── App.kt
 
-
-> *Observação:* Note que existe **um bloco de código dentro de outro** → por isso são usados dois pares de crases (```markdown + ```text).
-
 ---
 
-## ✅ **Correção da seção “Configuração da API Key” + Dependências**
-
-Aqui está com separações claras:
-
-```markdown
 ## 🔑 Configuração da API Key
 
 No arquivo `local.properties`, adicione:
 
+---
+
 ```properties
 TMDB_API_KEY=sua_chave_aqui
+
+---
 
 Obtenha uma chave gratuita em:
 https://developer.themoviedb.org
 
 No arquivo build.gradle.kts (Módulo):
+
+---
 
 import java.util.Properties
 
@@ -174,7 +172,11 @@ buildFeatures {
     buildConfig = true
 }
 
+---
+
 📦 Dependências Principais
+
+---
 
 // Retrofit
 implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -208,12 +210,16 @@ implementation("androidx.paging:paging-compose:3.3.0")
 implementation("io.insert-koin:koin-android:3.5.0")
 implementation("io.insert-koin:koin-androidx-compose:3.5.0")
 
+---
+
 🧰 Ambiente de Desenvolvimento
 
 Android Studio: Narwhal 4 Feature Drop (2025.1.4)
 Compile SDK: 35
 Linguagem: Kotlin
 Arquitetura: MVVM + Repository Pattern
+
+---
 
 📝 Licença
 

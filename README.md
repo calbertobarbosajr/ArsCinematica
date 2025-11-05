@@ -96,48 +96,56 @@ O projeto segue o padrão **MVVM (Model–View–ViewModel)** combinado com o **
 
 ## 🧩 Estrutura do Projeto
 
+```text
 com.seuprojeto
 │
 ├── data
-│ ├── local
-│ │ ├── AppDatabase.kt
-│ │ ├── FavoriteMovieDao.kt
-│ │ └── FavoriteMovie.kt
-│ ├── remote
-│ │ ├── TMDbApi.kt
-│ │ ├── RetrofitClient.kt
-│ │ └── MoviesPagingSource.kt
-│ ├── repository
-│ │ └── MoviesRepository.kt
-│ └── model
-│ ├── Movie.kt
-│ ├── MovieResponse.kt
-│ ├── Video.kt
-│ ├── VideoResponse.kt
-│ └── MovieDetails.kt
+│   ├── local
+│   │   ├── AppDatabase.kt
+│   │   ├── FavoriteMovieDao.kt
+│   │   └── FavoriteMovie.kt
+│   ├── remote
+│   │   ├── TMDbApi.kt
+│   │   ├── RetrofitClient.kt
+│   │   └── MoviesPagingSource.kt
+│   ├── repository
+│   │   └── MoviesRepository.kt
+│   └── model
+│       ├── Movie.kt
+│       ├── MovieResponse.kt
+│       ├── Video.kt
+│       ├── VideoResponse.kt
+│       └── MovieDetails.kt
 │
 ├── di
-│ └── AppModule.kt
+│   └── AppModule.kt
 │
 ├── ui
-│ ├── movies
-│ │ ├── MovieListScreen.kt
-│ │ └── MoviesViewModel.kt
-│ ├── details
-│ │ ├── MovieDetailsScreen.kt
-│ │ └── MovieDetailsViewModel.kt
-│ ├── favorites
-│ │ ├── FavoritesScreen.kt
-│ │ └── FavoritesViewModel.kt
-│ └── components
-│ └── YouTubeTrailerPlayer.kt
+│   ├── movies
+│   │   ├── MovieListScreen.kt
+│   │   └── MoviesViewModel.kt
+│   ├── details
+│   │   ├── MovieDetailsScreen.kt
+│   │   └── MovieDetailsViewModel.kt
+│   ├── favorites
+│   │   ├── FavoritesScreen.kt
+│   │   └── FavoritesViewModel.kt
+│   └── components
+│       └── YouTubeTrailerPlayer.kt
 │
 ├── MainActivity.kt
 └── App.kt
 
 
+> *Observação:* Note que existe **um bloco de código dentro de outro** → por isso são usados dois pares de crases (```markdown + ```text).
+
 ---
 
+## ✅ **Correção da seção “Configuração da API Key” + Dependências**
+
+Aqui está com separações claras:
+
+```markdown
 ## 🔑 Configuração da API Key
 
 No arquivo `local.properties`, adicione:
@@ -145,10 +153,10 @@ No arquivo `local.properties`, adicione:
 ```properties
 TMDB_API_KEY=sua_chave_aqui
 
-Obtenha uma chave gratuita em developer.themoviedb.org
-.
+Obtenha uma chave gratuita em:
+https://developer.themoviedb.org
 
-No build.gradle.kts (módulo):
+No arquivo build.gradle.kts (Módulo):
 
 import java.util.Properties
 
@@ -166,7 +174,7 @@ buildFeatures {
     buildConfig = true
 }
 
-Dependências Principais
+📦 Dependências Principais
 
 // Retrofit
 implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -201,11 +209,15 @@ implementation("io.insert-koin:koin-android:3.5.0")
 implementation("io.insert-koin:koin-androidx-compose:3.5.0")
 
 🧰 Ambiente de Desenvolvimento
-- Android Studio Narwhal 4 Feature Drop | 2025.1.4
-- Compile SDK: 35
-- Linguagem: Kotlin
-- Arquitetura: MVVM + Repository Pattern
+
+Android Studio: Narwhal 4 Feature Drop (2025.1.4)
+Compile SDK: 35
+Linguagem: Kotlin
+Arquitetura: MVVM + Repository Pattern
 
 📝 Licença
 
 Distribuído sob a licença MIT. Consulte o arquivo LICENSE para mais informações.
+
+
+
